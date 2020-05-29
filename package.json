@@ -1,0 +1,27 @@
+{
+  "name": "cmsc495-librarymanagementsystem",
+  "version": "1.0.0",
+  "description": "The library system, built entirely in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMSC495-SO/CMSC495-LibraryManagementSystem.git"
+  },
+  "keywords": [
+    "library",
+    "node",
+    "javascript"
+  ],
+  "author": "sogwuazor, fmusonda, biko, sfokou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMSC495-SO/CMSC495-LibraryManagementSystem/issues"
+  },
+  "homepage": "https://github.com/CMSC495-SO/CMSC495-LibraryManagementSystem#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
