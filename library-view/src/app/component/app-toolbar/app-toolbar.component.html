@@ -1,0 +1,29 @@
+<div class="toolbar">
+    <div class="left">
+        <div class="brand">
+            <a [routerLink]="['/']">
+                <h1 style="color: white;">{{title}}</h1>
+            </a>
+        </div>
+        <div class="page_routes">
+            <div class="link" role="button">
+                <a [routerLink]="['/']" class="button fancy-button">
+                    Home
+                </a>
+            </div>
+            <div class="link" role="button">
+                <a [routerLink]="['/about']" class="button fancy-button">
+                    About Us
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="right">
+        <div class="link" role="button">
+            <a class="button fancy-button">
+               <!-- will need some kind of icon here --> User login
+            </a>
+        </div>        
+    </div>
+</div>

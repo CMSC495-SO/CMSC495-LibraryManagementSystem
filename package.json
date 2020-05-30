@@ -2,8 +2,9 @@
   "name": "cmsc495-librarymanagementsystem",
   "version": "1.0.0",
   "description": "The library system, built entirely in nodejs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,8 @@
   },
   "homepage": "https://github.com/CMSC495-SO/CMSC495-LibraryManagementSystem#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "requirejs": "^2.3.6"
   }
 }

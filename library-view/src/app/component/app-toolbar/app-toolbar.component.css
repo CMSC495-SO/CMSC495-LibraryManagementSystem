@@ -1,0 +1,39 @@
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.toolbar .right,
+.toolbar .left {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.toolbar .left {
+    justify-content: space-between;
+    width: 60vw;
+}
+
+.toolbar .left .brand {
+    margin-right: 10%;
+}
+
+.toolbar .left .page_routes {
+    justify-content: flex-start;
+    flex-direction: row;
+    display: flex;
+    padding: 1.45em 0 0 0;
+    flex: 2;
+}
+
+.toolbar .page_routes .link {
+    margin-right: 10px;
+}
+
+.toolbar .left .link a{
+    color: #ffffff !important;
+}
