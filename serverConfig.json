@@ -1,0 +1,8 @@
+{
+  "local": {
+    "connectionString": "mongodb://localhost:27017/",
+    "dbName": "test",
+    "timeout": 600000,
+    "cors": ["http://localhost:3000"]
+  }
+}

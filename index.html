@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Library Management System Database Manager</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            height: 92vh;
+        }
+
+        .container .sub {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 1px solid #273E47;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container .sub .title-container {
+            height: 40px;
+            max-height: 40px;
+            overflow: hidden;
+            margin: 0 auto;
+            text-decoration: underline;
+        }
+
+        .container .sub .info {
+            flex: 2;
+            overflow: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .container .sub .info .add-library,
+        .container .sub .info .remove-library,
+        .container .sub .info .modify-library {
+            display: none;
+            height: 100%;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .container .sub .info .add-library.active,
+        .container .sub .info .remove-library.active,
+        .container .sub .info .modify-library.active {
+            display: block;
+        }
+
+        .container .sub .footer {
+            height: 30px;
+            max-height: 30px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div style="background-color: black; color: #ffffff;">
+        <h4>Database information tracker</h4>
+    </div>
+</header>
+<div class="container">
+    <div class="lib-container sub">
+        <div class="title-container">Library Info</div>
+        <div class="lib info">
+            <div class="add-library active">
+                <div class="section">
+                    <div>Name: <input class="txtName" type="text" placeholder="dev-lib"></div>
+                    <div>
+                        <button class="btnAdd">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="remove-library">
+                <div class="section"></div>
+            </div>
+            <div class="modify-library">
+                <div class="section"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="btn data"></button>
+        </div>
+    </div>
+    <div class="book-container sub">
+        <div class="title-container">Book Info</div>
+        <div class="book info"></div>
+    </div>
+    <div class="user-container sub">
+        <div class="title-container">
+            User Info
+        </div>
+        <div class="user info"></div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
