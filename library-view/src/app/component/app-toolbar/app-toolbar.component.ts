@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BaseDialogService} from "../base-dialog";
 
 @Component({
   selector: 'app-app-toolbar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppToolbarComponent implements OnInit {
   title = 'Library Management System';
-  constructor() { }
+
+  constructor(private dialogService: BaseDialogService) {}
 
   ngOnInit(): void {
   }
 
+  openDialog(id: string) {
+    this.dialogService.open(id);
+  }
+
+  closeDialog(id: string) {
+    this.dialogService.close(id);
+  }
 }

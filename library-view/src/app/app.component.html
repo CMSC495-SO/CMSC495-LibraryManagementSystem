@@ -8,3 +8,28 @@
 
   <app-footer></app-footer> <!-- create footer -->
 </div>
+
+
+<lms-dialog id="user-login-dialog">
+  <div class="header">
+    <div class="title">
+      Library Management Sign-In
+    </div>
+  </div>
+  <div class="content">
+    <div class="img_container"></div>
+    <div class="un-container">
+      <input type="text" placeholder="Username">
+    </div>
+    <div class="pw-container">
+      <input type="password" placeholder="Password">
+    </div>
+  </div>
+  <div class="footer">
+    <div class="left"></div>
+    <div class="right">
+      <button class="btnCancel close" (click)="closeDialog('user-login-dialog')">Cancel</button>
+      <button class="submit disabled" (click)="submitDataFromForm()">Submit</button>
+    </div>
+  </div>
+</lms-dialog>

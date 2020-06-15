@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BaseDialogService} from "./component/base-dialog";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'library-view';
+
+  constructor(private dialogService:BaseDialogService) {}
+
+  submitDataFromForm() {
+    debugger
+  }
+
+  closeDialog(id) {
+    debugger;
+    this.dialogService.close(id);
+  }
 }
