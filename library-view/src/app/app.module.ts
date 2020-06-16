@@ -14,6 +14,8 @@ import { AppToolbarComponent } from './component/app-toolbar/app-toolbar.compone
 import { HomeComponent } from './pages/home/home.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     AppToolbarComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

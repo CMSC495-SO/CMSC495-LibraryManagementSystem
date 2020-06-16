@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './pages/home/home.component'
 import {SampleComponent} from './component/sample/sample.component'
 import {AboutusComponent} from './pages/aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,17 @@ const routes: Routes = [
   {
     path: 'sample',
     component: SampleComponent
+  },
+  
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
