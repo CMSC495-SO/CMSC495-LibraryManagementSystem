@@ -9,6 +9,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { AppToolbarComponent } from './component/app-toolbar/app-toolbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     FooterComponent,
     AppToolbarComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

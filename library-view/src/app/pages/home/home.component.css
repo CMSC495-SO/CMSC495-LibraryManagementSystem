@@ -1,0 +1,37 @@
+.homeContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.homeContainer .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex: .7;
+    min-width: 200px;
+}
+
+.homeContainer .menu .title{
+    font-size: 18pt;
+    border-bottom: 1px solid #000000;
+    padding: 10px 0 10px 5px;
+}
+
+.homeContainer .menu .body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.homeContainer .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex: 2;
+}

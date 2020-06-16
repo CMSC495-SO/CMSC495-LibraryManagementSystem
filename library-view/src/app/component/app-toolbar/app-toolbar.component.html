@@ -21,9 +21,15 @@
     
     <div class="right">
         <div class="link" role="button">
-            <a class="button fancy-button">
+            <a class="button fancy-button" [routerLink]="['/index']">
                <!-- will need some kind of icon here --> User login
             </a>
-        </div>        
+        </div> 
+        <div class="link" role="button">
+            <button onclick="document.getElementById('id01').style.display='block'" style="background-color:#0f0a0a;width:auto;" > <a [routerLink]="['/login']">Login</a></button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="background-color:#0f0a0a;width:auto;" > <a [routerLink]="['/signup']">SignUP</a>  </button>
+        
+        </div>       
     </div>
+
 </div>
