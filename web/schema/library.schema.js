@@ -1,8 +1,27 @@
-define(['mongoose', 'enumerations/accountStatus.enum'], function(mongoose, AccountStatus) {
+define(['mongoose'], function(mongoose) {
     'use strict';
 
-    return mongoose.Schema('Library', {
-        name: String,
-        address: String
+    var addressSubSchema = new mongoose.Schema({
+        street: String,
+        city: String,
+        state: String,
+        zipCode: String,
+    });
+
+    return new mongoose.Schema({
+        title: {
+            type: String,
+            required: true
+        },
+        address: {
+            type: addressSubSchema,
+            required: true
+        },
+        dateAdded: {
+            type: Date
+        },
+        dateModified: {
+            type: Date
+        }
     });
 });

@@ -1,37 +1,65 @@
-.homeContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    height: 100%;
+:host {
+  height: 100%;
 }
 
-.homeContainer .menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex: .7;
-    min-width: 200px;
+.component-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-.homeContainer .menu .title{
-    font-size: 18pt;
-    border-bottom: 1px solid #000000;
-    padding: 10px 0 10px 5px;
+.component-container .sidebar-container {
+  background: #fff;
+  flex: .30;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.homeContainer .menu .body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
+.component-container .sidebar-container .sidebar-header {
+  height: 50px;
 }
 
-.homeContainer .main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex: 2;
+.component-container .sidebar-container .sidebar-header .bar-title {
+  font-size: 20pt;
+  margin: 10px 5px 0 0;
+  text-align: right;
+  line-height: 20pt;
+  text-decoration: underline;
+}
+
+.component-container .sidebar-container .sidebar-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.component-container .sidebar-container .sidebar-body button {
+  margin: 5px;
+  background-color: transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 14pt;
+  padding: 10px;
+}
+
+.component-container .sidebar-container .sidebar-body button:hover,
+.component-container .sidebar-container .sidebar-body button:focus{
+  text-decoration: underline;
+  font-size: 16pt;
+  border-color: var(--active-highlight);
+}
+
+.component-container .divider {
+  height: 1px;
+  margin: 0 0 5px 0;
+  background-color: grey;
+}
+
+.component-container .render-container {
+  flex: 2;
 }

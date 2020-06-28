@@ -1,24 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {BaseDialogService} from "../base-dialog";
+import {MatDialog} from "@angular/material/dialog";
+
+import {LoginComponent} from "../login/login.component";
+import {StorageManager} from "../../tools/storageManager";
 
 @Component({
   selector: 'app-app-toolbar',
   templateUrl: './app-toolbar.component.html',
   styleUrls: ['./app-toolbar.component.css']
 })
-export class AppToolbarComponent implements OnInit {
+export class AppToolbarComponent implements OnInit{
   title = 'Library Management System';
+  userInfo: object;
 
-  constructor(private dialogService: BaseDialogService) {}
+  constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
+  openDialog() {
+    let storageContainer = new StorageManager({});
+    const dialogRef = this.dialog.open(LoginComponent, {
+      data: {title: 'Sign In'},
+      closeOnNavigation: false
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.userInfo = JSON.parse(storageContainer.getStorageItem('userdata'));
+    });
   }
 
-  openDialog(id: string) {
-    this.dialogService.open(id);
-  }
-
-  closeDialog(id: string) {
-    this.dialogService.close(id);
+  ngOnInit() {
+    let storageContainer = new StorageManager({});
+    this.userInfo = JSON.parse(storageContainer.getStorageItem('userdata'));
   }
 }

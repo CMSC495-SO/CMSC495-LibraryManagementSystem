@@ -1,0 +1,76 @@
+.tab-controls {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-bottom: 1px solid #acacac;
+}
+
+.tab-controls .tab {
+  border-top: 1px solid #dddddd;
+  flex: 1;
+  padding: 10px;
+}
+
+.tab-controls .tab.active {
+  text-decoration: underline;
+  color: var(--menu-header-background);
+  font-weight: bold;
+}
+
+.tab-controls .tab:not(:first-child) {
+  border-right: 1px solid #dddddd;
+}
+
+.tab-controls .tab:first-child {
+  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+
+.tab-content .user-info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+.tab-content .button-group-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tab-content .validationBadge {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  color: #fff;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 13px;
+  vertical-align: middle;
+  line-height: 24px;
+  margin-left: 5px;
+  content: ' ';
+}
+
+.tab-content .validationBadge.isValid {
+  background-color: green;
+}
+
+.tab-content .validationBadge.notValid {
+  background-color: red;
+}
+
+.tab-content .validationBadge.isValid::before {
+  content: '✓';
+}
+
+.tab-content .validationBadge.notValid::before {
+  content: '✗';
+}
+
+.user-info-section input {
+  padding: 5px;
+  margin: 5px 0;
+}

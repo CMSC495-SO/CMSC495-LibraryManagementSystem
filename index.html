@@ -68,21 +68,52 @@
             overflow: hidden;
             margin: 0 auto;
         }
+
+        .container .data-container {
+            margin: 0 0 20px 0;
+        }
+
+        .container .divider {
+            height: 2px;
+            margin: 5px 0;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
 <header>
     <div style="background-color: black; color: #ffffff;">
-        <h4>Database information tracker</h4>
+        <h3>Database Information Tracker</h3>
     </div>
 </header>
 <div class="container">
     <div class="lib-container sub">
         <div class="title-container">Library Info</div>
         <div class="lib info">
+            <div class="view-library">
+                <div class="controls"><button class="btnReloadLibrary">Reload Library</button></div>
+                <div class="data-container">
+                    <div class="grid" style="width: 100%;">
+                        <table style="width: 100%;">
+                            <thead>
+                            <tr><th>Id</th> <th>Name</th> <th>Address</th></tr>
+                            </thead>
+                            <tbody>
+                            <tr class="section"><td colspan="4">No Data Available.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             <div class="add-library active">
                 <div class="section">
                     <div>Name: <input class="txtName" type="text" placeholder="dev-lib"></div>
+                    <div>
+                        <div>Street: <input class="txtStreet" type="text" placeholder="123 abc street"></div>
+                        <div>City: <input class="txtCity" type="text" placeholder="Baltimore"></div>
+                        <div>State: <input class="txtState" type="text" placeholder="Maryland"></div>
+                        <div>Zip Code: <input class="txtZipCode" type="text" placeholder="##### or #####-####"></div>
+                    </div>
                     <div>
                         <button class="btnAdd">Add</button>
                     </div>
@@ -107,7 +138,38 @@
         <div class="title-container">
             User Info
         </div>
-        <div class="user info"></div>
+        <div class="user info">
+            <div class="add-user-section">
+                <div class="section">
+                    <div><label>User Name:<input type="text" class="userName" placeholder="username"></label></div>
+                    <div><label>Password:<input type="password" class="password"></label></div>
+                    <div><label>First Name:<input type="text" class="txtFirstName" placeholder="first name"></label></div>
+                    <div><label>Last Name:<input type="text" class="txtLastName" placeholder="last name"></label></div>
+                    <div><label>Email:<input type="text" class="txtEmail" placeholder="email"></label></div>
+                    <div><button class="btnSubmitNewUser">Submit</button></div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="view-user-section">
+                <div class="controls">
+                    <button class="btnRefreshData">Refresh Data</button>
+                </div>
+                <div class="section">
+                    <table style="width: 100%">
+                        <thead>
+                        <tr><th>User Name</th> <th>First Name</th><th>Last Name</th><th>Email</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td colspan="8">No Data Available</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="check-user-section">
+                <input placeholder="enter user name to find" type="text" class="txtCheckUserName"> <span class="results"></span>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -1,34 +1,16 @@
-
-<div class="homeContainer">
-    <div class="menu">
-      
-      <div class="title">
-          side bar title
-
-      </div>
-      <div class="body"> 
-        <a href="#">Library</a>
-        <a href="#">Catalog</a>
-        <a href="#">Librarian</a>
-        <a href="#">Link 4</a>
-      </div>
+<div class="component-container">
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <div class="bar-title" mat-card-title>Main Menu</div>
     </div>
-  
-    <div class="main">
-  
-    <br>
-    <div style="text-align: center" class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search by title or author" name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+    <div class="divider horizontal"></div>
+    <div class="sidebar-body">
+      <button class="button" (click)="openLibraryComponent('catalog')">Global Catalog</button>
+      <button class="button" *ngIf="loggedIn">{{userData.firstName}}'s Catalog</button>
+      <button class="button" *ngIf="user.isAdmin || user.isLibrarian" (click)="showFeatureUnavailable()">User Manager</button>
+      <button class="button" *ngIf="user.isAdmin || user.isLibrarian" (click)="showFeatureUnavailable()">Catalog Manager</button>
+      <button class="button" *ngIf="user.isAdmin || user.isLibrarian" (click)="showFeatureUnavailable()">Notification's Manager</button>
     </div>
-  
-      
-      
-      
-      <p>The library management system is a software build to handle the primary housekeeping functions of a library. </p>
-    </div>
-  
-    
   </div>
+  <div class="render-container"></div>
+</div>

@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
-import {BaseDialogService} from "./component/base-dialog";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'library-view';
+  isUserSignedIn = false;
+  signedInUser: Object;
 
-  constructor(private dialogService:BaseDialogService) {}
+  constructor() {}
+
+  ngOnInit() {
+    /*bootstrapping*/
+
+  }
 
   submitDataFromForm() {
     debugger
@@ -17,6 +23,5 @@ export class AppComponent {
 
   closeDialog(id) {
     debugger;
-    this.dialogService.close(id);
   }
 }

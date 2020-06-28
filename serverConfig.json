@@ -1,8 +1,22 @@
 {
-  "local": {
-    "connectionString": "mongodb://localhost:27017/",
-    "dbName": "test",
-    "timeout": 600000,
-    "cors": ["http://localhost:3000"]
+  "environment": {
+    "local": {
+      "connectionString": "mongodb://localhost:27017/",
+      "dbName": "lmssystem",
+      "timeout": 600000,
+      "cors": [
+        "http://localhost:3000",
+        "http://localhost:4200"
+      ]
+    },
+    "production": {
+      "connectionString": "mongodb://admin:cmsc495@ds143039.mlab.com:43039/",
+      "dbName": "lmsapp",
+      "timeout": 600000,
+      "cors": [
+        "http://localhost:3000",
+        "http://localhost:4200"
+      ]
+    }
   }
 }

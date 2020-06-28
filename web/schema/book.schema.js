@@ -5,7 +5,7 @@ define([
 ], function (mongoose, BookFormat, BookStatus) {
     'use strict';
 
-    return mongoose.Schema('Book', {
+    return mongoose.Schema({
         title: String,
         ISBN: String,
         subject: String,
@@ -15,8 +15,14 @@ define([
         borrowed: Date,
         dueDate: Date,
         price: Number,
-        format: BookFormat,
-        status: BookStatus,
+        format: {
+            type: String,
+            enum: BookFormat
+        },
+        status: {
+            type: String,
+            enum: BookStatus
+        },
         dateOfPurchase: Date,
         publicationDate: Date,
         id: String

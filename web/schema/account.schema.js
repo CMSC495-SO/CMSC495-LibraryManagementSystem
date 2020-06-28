@@ -1,16 +1,39 @@
 define([
     'mongoose',
     'enumerations/accountStatus.enum',
-    'enumerations/person.enum',
     'schema/libraryCard.schema'
-], function (mongoose, AccountStatus, Person, LibraryCard) {
+], function (mongoose, AccountStatus) {
     'use strict';
 
-    return mongoose.Schema('Account', {
+    return mongoose.Schema({
         id: String,
-        password: String,
-        status: AccountStatus,
-        person: Person,
-        card: LibraryCard
+        firstName: String,
+        lastName: String,
+        emailAddress: String,
+        userName: {
+            type: String,
+            required: true,
+            index: {
+                unique: true
+            }
+        },
+        password: {
+            type: String,
+            required: true
+        },
+        status: {
+            type: String,
+            enum: AccountStatus
+        },
+        dateAdded: {
+            type: Date
+        },
+        dateModified: {
+            type: Date
+        },
+        reservations: {
+            type: Array,
+            of: String
+        }
     });
 });

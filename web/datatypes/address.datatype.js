@@ -5,7 +5,6 @@ define([], function() {
         streetAddress: String,
         city: String,
         state: String,
-        zipcode: String,
-        country: String
+        zipCode: String
     }
 });

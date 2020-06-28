@@ -1,13 +1,5 @@
 define([], function () {
     'use strict';
 
-    return {
-        HARDCOVER: 'hardcover',
-        PAPERBACK: 'paperback',
-        AUDIOBOOK: 'audiobook',
-        EBOOK: 'ebook',
-        NEWSPAPER: 'newspaper',
-        MAGAZINE: 'magazine',
-        JOURNAL: 'journal'
-    }
+    return ['hardcover', 'paperback','audiobook','ebook','newspaper','magazine','journal'];
 });

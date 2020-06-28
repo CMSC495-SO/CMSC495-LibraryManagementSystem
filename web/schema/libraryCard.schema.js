@@ -1,7 +1,7 @@
 define(['mongoose'], function(mongoose) {
     'use strict';
 
-    return mongoose.Schema('LibraryCard', {
+    return mongoose.Schema({
         cardNumber: String,
         barcode: String,
         issuedAt: Date,

@@ -9,10 +9,10 @@
 }
 
 :root {
-  --toolbar-background-color: #273E47;
-  --dynamic-background: linear-gradient(208deg, var(--main-background-color), var(--active-highlight), var(--toolbar-background-color)) 0% 0% / 600% 600%;
+  --dynamic-background: linear-gradient(208deg, var(--main-background-color), var(--active-highlight)) 0% 0% / 600% 600%;
   --dynamic-background-animation: BackgroundAnimation 8s ease infinite;
   --dynamic-background-size: 600% 600%;
+  --toolbar-background-color: #273E47;
   --main-background-color: #D8C99B;
   --active-highlight: #A4243B;
   --fail-highlight: #BD632F;
@@ -44,10 +44,6 @@ p {
 }
 
 .toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 60px;
   display: flex;
   align-items: center;
@@ -226,7 +222,7 @@ a:hover {
 
 .circle-link:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -308,7 +304,7 @@ svg#clouds {
 /* load animations here */
 @keyframes BackgroundAnimation {
   0% {
-    background-position: 51% 0%;
+    background-position: 51% 0;
   }
 
   50% {
@@ -316,9 +312,12 @@ svg#clouds {
   }
 
   100% {
-    background-position: 51% 0%;
+    background-position: 51% 0;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
