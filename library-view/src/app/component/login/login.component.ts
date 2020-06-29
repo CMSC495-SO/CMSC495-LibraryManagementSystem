@@ -45,7 +45,7 @@ export class LoginComponent {
       let storage = new StorageManager({});
       if (!response.matched) {
         this.updateMessage(response.message);
-        return;
+        return ;
       }
       //need to store response data
       storage.add('userdata', JSON.stringify(response.user));
