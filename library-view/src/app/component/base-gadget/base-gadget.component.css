@@ -1,0 +1,15 @@
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.controls .left,
+.controls .middle,
+.controls .right{
+  flex: 1;
+}

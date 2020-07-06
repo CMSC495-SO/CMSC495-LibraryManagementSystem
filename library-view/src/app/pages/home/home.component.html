@@ -12,5 +12,7 @@
       <button class="button" *ngIf="user.isAdmin || user.isLibrarian" (click)="showFeatureUnavailable()">Notification's Manager</button>
     </div>
   </div>
-  <div class="render-container"></div>
+  <div class="render-container">
+    <ng-template gadget-position></ng-template>
+  </div>
 </div>
