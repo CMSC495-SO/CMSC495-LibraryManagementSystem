@@ -14,12 +14,14 @@ import { FooterComponent } from './component/footer/footer.component';
 import { AppToolbarComponent } from './component/app-toolbar/app-toolbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
-// import { LmsDialogComponent } from './component/lms-dialog/lms-dialog.component';
 import { LoginComponent } from './component/login/login.component';
 
 /*providers*/
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
+import { BaseGadgetComponent } from './component/base-gadget/base-gadget.component';
+import {BaseGadgetDirective} from './component/base-gadget/base-gadget.directive';
+import { GlobalCatalogComponent } from './pages/home/gadgets/global-catalog/global-catalog.component';
 
 
 @NgModule({
@@ -32,7 +34,10 @@ import { ConfirmationDialogComponent } from './component/confirmation-dialog/con
     AboutusComponent,
     /*LmsDialogComponent,*/
     LoginComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    BaseGadgetComponent,
+    BaseGadgetDirective,
+    GlobalCatalogComponent
   ],
   entryComponents: [LoginComponent],
   imports: [

@@ -10,7 +10,7 @@
       ]
     },
     "production": {
-      "connectionString": "mongodb://admin:cmsc495@ds143039.mlab.com:43039/",
+      "connectionString": "mongodb://test:testing12@ds143039.mlab.com:43039/",
       "dbName": "lmsapp",
       "timeout": 600000,
       "cors": [
