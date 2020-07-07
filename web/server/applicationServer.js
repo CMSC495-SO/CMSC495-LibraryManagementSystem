@@ -1,8 +1,9 @@
 define([
     'mongoose',
     'schema/library.schema',
+    'schema/book.schema',
     'models/accountModel'
-], function (mongoose, librarySchema, AccountModel) {
+], function (mongoose, librarySchema, bookSchema, AccountModel) {
     'use strict';
 
     var applicationServer = {
@@ -58,6 +59,8 @@ define([
         this.appReference.post(this.options.baseServicePath, context.addNewLibrary.bind(this));
         this.appReference.post(this.options.baseServicePath + '/login', context.loginUser.bind(this));
         this.appReference.post(this.options.baseServicePath + '/users', context.addUser.bind(this));
+        this.appReference.post(this.options.baseServicePath + '/book/add', context.addBook.bind(this));
+
 
         //delete requests
         this.appReference.delete(this.options.baseServicePath + '/delete/:id', async (req, res) => {
@@ -68,6 +71,7 @@ define([
     applicationServer.initializeModels = function () {
         this.Library = mongoose.model('Library', librarySchema);
         this.Account = AccountModel;
+        this.Book = mongoose.model('Book', bookSchema);
     };
 
     applicationServer.addNewLibrary = async function (data, res) {
@@ -191,6 +195,42 @@ define([
             res.json({isValid: user.length});
         });
     };
+
+    applicationServer.addBook = async function (data, res){
+        var entry = {
+            title: data.body.title,
+            ISBN: data.body.ISBN,
+            format: data.body.format,
+            subject: data.body.subject,
+            publisher: data.body.publisher,
+            language: data.body.language,
+            numberOfPages: data.body.numberOfPages,
+            borrowed: data.body.borrowed,
+            dueDate: data.body.dueDate,
+            price: data.body.price,
+            status: data.body.status,
+            dateOfPurchase: data.body.dateOfPurchase,
+            publicationDate: data.body.publicationDate
+
+        };
+
+        var properties = {
+            message: 'book added',
+            status: '200'
+        };
+
+        try {
+            let book = new this.Book(entry);
+            await book.save();
+            this.ioReference.emit('book-added', entry);
+            res.json(properties);
+        } catch (ex) {
+            properties.status = 500;
+            properties.message = 'error occured: book not added';
+            res.json(properties);
+            console.error(ex);
+        }
+    }
 
     return applicationServer;
 });

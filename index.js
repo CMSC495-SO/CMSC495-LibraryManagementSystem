@@ -92,6 +92,36 @@ $(document).ready(function () {
         _this.$userArea.on('focusout', '.check-user-section .txtCheckUserName', function(evt) {
             _this._checkUser({userName: $(evt.target).val()});
         });
+
+        _this.$bookArea.off('click', '.add-book-section div .btnSubmitNewBook');
+        _this.$bookArea.on('click', '.add-book-section div .btnSubmitNewBook', function() {
+            var paramObject = {
+                title: _this.$bookArea.find('.BookTitle').val(),
+                ISBN: _this.$bookArea.find('.BookISBN').val(),
+                subject: _this.$bookArea.find('.BookSubject').val(),
+                publisher: _this.$bookArea.find('.BookPublisher').val(),
+                language: _this.$bookArea.find('.BookLanguage').val(),
+                numberOfPages: _this.$bookArea.find('.BookPages').val(),
+                borrowed: _this.$bookArea.find('.BookBorrowed').val(),
+                dueDate: _this.$bookArea.find('.BookDueDate').val(),
+                price: _this.$bookArea.find('.BookPrice').val(),
+                format: _this.$bookArea.find('.BookFormat').val(),
+                status: _this.$bookArea.find('.BookStatus').val(),
+                dateOfPurchase: _this.$bookArea.find('.BookPurchaseDate').val(),
+                publicationDate: _this.$bookArea.find('.BookPublicationDate').val(),
+                timestamp: Date.now()
+            };
+            console.log(paramObject);
+            _this.addBook(paramObject);
+        });
+    }
+
+    _this.addBook = function (param){
+        $.post('http://localhost:3000/lib/library/book/add', param).then(function () {
+            console.log('success');
+        }, function () {
+            console.error('failure');
+        });
     }
 
     function addUserRow(data) {
